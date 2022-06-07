@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BreadScrumb } from './components/BreadScrumb';
+import { Header } from './components/Header';
+import { Sort } from './components/Sort';
+import { CategoryFilter } from './components/CategoryFilter';
+import { ProductItemList } from './components/ProductItemList';
+import '../src/scss/App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main className="product">
+        <div className="container">
+          <BreadScrumb />
+          <Sort />
+          <section className="product__page-content">
+            <CategoryFilter />
+            <ProductItemList />
+          </section>
+        </div>
+      </main>
     </div>
   );
 }
