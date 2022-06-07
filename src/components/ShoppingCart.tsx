@@ -1,4 +1,4 @@
-import cartEmpty from '../assets/img/main/shopping-cart/cart-empty.svg';
+import cartEmpty from '../assets/img/shopping-cart/empty-cart.svg';
 
 export const ShoppingCart: React.FC = () => {
   return (

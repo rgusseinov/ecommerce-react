@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../assets/img/header/logo.svg';
 import viberIcon from '../assets/img/header/viber.svg';
 import whatsappIcon from '../assets/img/header/whatsapp.svg';
@@ -43,7 +44,9 @@ export const Header: React.FC = () => {
 
             <div className="header-middle__column header-logo">
               <div className="header__logo">
-                <img src={logo} alt="Kugoo" className="logo" />
+                <Link to="/">
+                  <img src={logo} alt="Kugoo" className="logo" />
+                </Link>
               </div>
             </div>
 
@@ -75,7 +78,9 @@ export const Header: React.FC = () => {
               <div className="header-shopping__block compare"><img src={compareIcon} alt="compare" /></div>
               <div className="header-shopping__block favourite"><img src={favIcon} alt="fav" /></div>
               <div className="header-shopping__block cart">
-                <img src={shoppingCart} alt="shopping-cart" />Корзина
+                <Link to="/cart/">
+                  <img src={shoppingCart} alt="shopping-cart" />Корзина
+                </Link>
               </div>						
             </div>
             

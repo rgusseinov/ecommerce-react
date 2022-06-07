@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import compare from '../assets/img/main/product-item/compare.svg';
 import productImage from '../assets/img/main/product-item/product-image.png';
 import capacity from '../assets/img/main/product-item/capacity.svg';
@@ -9,7 +10,7 @@ import fav from '../assets/img/main/product-item/fav.svg';
 
 export const ProductItem: React.FC = () => {
   return (
-    <a href="/product-page.html" className="products-list__item product-list-item">
+    <Link to="/product/1" className="products-list__item product-list-item">
       <div className="product-list-item__thumbnail product-thumbnail">
         <div className="product-thumbnail__container">
           <div className="product-thumbnail__marketing product-marketing">
@@ -67,5 +68,5 @@ export const ProductItem: React.FC = () => {
           </div>
         </div>
       </div>
-  </a>);
+  </Link>);
 }
