@@ -20,7 +20,7 @@ export const ShoppingCart: React.FC = () => {
               <div className="shopping-cart-body__image"><img src={cartEmpty} alt="" /></div>
               <div className="shopping-cart-body__label">Ваша корзина пуста</div>
               <div className="shopping-cart-body__sublabel">Добавьте в нее товары из каталога</div>
-              <a href="/index.html" className="shopping-cart-body__btn-catalog btn">Перейти в каталог</a>
+              <a href="/" className="shopping-cart-body__btn-catalog btn">Перейти в каталог</a>
             </div>
           </div>
         </div>

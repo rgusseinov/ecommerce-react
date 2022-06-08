@@ -60,15 +60,15 @@ export const ProductPage: React.FC = () => {
                     </div>
                     <div className="product-subtitle__row">
                       <div className="product-subtitle__item">
-                        <img src={activeIcon} />
+                        <img src={activeIcon} alt="В наличии" />
                         В наличии
                       </div>
                       <div className="product-subtitle__item">
-                        <img src={compare} />
+                        <img src={compare} alt="Сравнить" />
                         Сравнить
                       </div>
                       <div className="product-subtitle__item">
-                        <img src={share} />
+                        <img src={share} alt="Поделиться" />
                         Поделиться
                       </div>
                     </div>
@@ -81,7 +81,7 @@ export const ProductPage: React.FC = () => {
                     </div>
                     <div className="product-price__block price-block price-block-bg">
                       <div className="price-block__wrapper">
-                        <div className="price-block__icon"><img src={card} /></div>
+                        <div className="price-block__icon"><img src={card} alt="Рассрочка" /></div>
                         <div className="price-block__info">
                           <span>Рассрочка:</span>
                           <br/> 1 760 ₽ в месяц / 24 месяца
@@ -92,7 +92,7 @@ export const ProductPage: React.FC = () => {
                 </div>
     
                 <div className="product-info__section info-section"> 
-                  <div className="info-section__title">Комплектация <img src={info} /></div>
+                  <div className="info-section__title">Комплектация <img src={info} alt="Комплектация"/></div>
                   
                   <div className="info-section__body">
                     <div className="info-section__row">
@@ -113,7 +113,7 @@ export const ProductPage: React.FC = () => {
                         <div className="subsection-content__sub">7600 руб.</div>
                       </div>
                       <div className="subsection-content__block settings">
-                        <a href="#" className="settings__link">Изменить</a>
+                        <a href="/" className="settings__link">Изменить</a>
                       </div>
                     </div>
                     <div className="product-info__border-line"></div>
@@ -184,11 +184,11 @@ export const ProductPage: React.FC = () => {
                         <div className="gift-box__title">2 подарка при покупке</div>
                         <div className="gift-box__row">
                           <div className="gift-box__block gift-block">
-                            <img src={book} />
+                            <img src={book} alt="Gift" />
                             Книга «6 вопросов об электротранспорте, на которые вы должны знать ответ».
                           </div>
                           <div className="gift-box__block gift-block">
-                            <img src={phoneHolder} />
+                            <img src={phoneHolder} alt="Gift" />
                             Универсальный держатель для телефона
                           </div>										
                         </div>
@@ -208,7 +208,7 @@ export const ProductPage: React.FC = () => {
                         <div className="info-section_box product-box">
                           <div className="product-box__wrapper">
                             <span className="product-box__label">
-                              <img src={circlePink} />
+                              <img src={circlePink} alt="Circle Pink" />
                             </span>
                             <div className="product-box__sublabel">Розовый</div>
                           </div>
@@ -218,7 +218,7 @@ export const ProductPage: React.FC = () => {
                         <div className="info-section_box product-box">
                           <div className="product-box__wrapper">
                             <span className="product-box__label">
-                              <img src={circleBlue} />
+                              <img src={circleBlue} alt="Circle Blue" />
                             </span>
                             <div className="product-box__sublabel">Розовый</div>
                           </div>
@@ -226,7 +226,7 @@ export const ProductPage: React.FC = () => {
                         <div className="info-section_box product-box">
                           <div className="product-box__wrapper">
                             <span className="product-box__label">
-                              <img src={circleRed} />
+                              <img src={circleRed} alt="Circle Red" />
                             </span>
                             <div className="product-box__sublabel">Красный</div>
                           </div>
@@ -239,7 +239,7 @@ export const ProductPage: React.FC = () => {
                     <div className="shopping__container">
                       <div className="shopping__header">
                         <div className="shopping__title">45 900 руб.</div>
-                        <div className="shopping__right-block"><img src={like} /></div>
+                        <div className="shopping__right-block"><img src={like} alt="Нравится" /></div>
                       </div>
                       <div className="shopping__middle shopping-middle">
                         <div className="shopping__image">
