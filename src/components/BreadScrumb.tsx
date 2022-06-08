@@ -1,3 +1,4 @@
+import React from 'react';
 export const BreadScrumb: React.FC = () => {
   return (
     <div className="product__breadcrumb">
@@ -6,5 +7,6 @@ export const BreadScrumb: React.FC = () => {
         <li className="breadscrumb__item">Каталог</li>
         <li className="breadscrumb__item active">Электросамокаты</li>
       </ol>
-    </div>);
-}
+    </div>
+  );
+};

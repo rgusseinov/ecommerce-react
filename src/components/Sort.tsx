@@ -1,3 +1,4 @@
+import React from 'react';
 import arrowDownIcon from '../assets/img/main/product-item/arrow-down.svg';
 
 export const Sort: React.FC = () => {
@@ -15,5 +16,6 @@ export const Sort: React.FC = () => {
           <img src={arrowDownIcon} alt="По дальности хода" />
         </div>
       </div>
-    </div>);
-}
+    </div>
+  );
+};
