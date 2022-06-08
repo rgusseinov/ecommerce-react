@@ -1,9 +1,10 @@
+import React from 'react';
 import cartEmpty from '../assets/img/shopping-cart/empty-cart.svg';
 
 export const ShoppingCart: React.FC = () => {
   return (
     <main className="shopping-cart">
-      <div className="container">			
+      <div className="container">
         <div className="shopping-cart__breadcrumb">
           <ol className="breadscrumb__list">
             <li className="breadscrumb__item">Главная</li>
@@ -17,13 +18,22 @@ export const ShoppingCart: React.FC = () => {
         <div className="shopping-cart__body shopping-cart-body">
           <div className="shopping-cart__container">
             <div className="shopping-cart__column">
-              <div className="shopping-cart-body__image"><img src={cartEmpty} alt="" /></div>
-              <div className="shopping-cart-body__label">Ваша корзина пуста</div>
-              <div className="shopping-cart-body__sublabel">Добавьте в нее товары из каталога</div>
-              <a href="/" className="shopping-cart-body__btn-catalog btn">Перейти в каталог</a>
+              <div className="shopping-cart-body__image">
+                <img src={cartEmpty} alt="" />
+              </div>
+              <div className="shopping-cart-body__label">
+                Ваша корзина пуста
+              </div>
+              <div className="shopping-cart-body__sublabel">
+                Добавьте в нее товары из каталога
+              </div>
+              <a href="/" className="shopping-cart-body__btn-catalog btn">
+                Перейти в каталог
+              </a>
             </div>
           </div>
         </div>
       </div>
-	</main>);
-}
+    </main>
+  );
+};

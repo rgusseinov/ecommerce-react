@@ -1,3 +1,4 @@
+import React from 'react';
 import { BreadScrumb } from './BreadScrumb';
 import { Sort } from './Sort';
 import { CategoryFilter } from './CategoryFilter';
@@ -17,5 +18,5 @@ export const Home: React.FC = () => {
         </div>
       </main>
     </>
-   );
-}
+  );
+};

@@ -1,3 +1,4 @@
+import React from 'react';
 import { ProductItem } from './ProductItem';
 
 export const ProductItemList: React.FC = () => {
@@ -6,11 +7,12 @@ export const ProductItemList: React.FC = () => {
       <div className="products-body__list products-list">
         <ProductItem />
         <ProductItem />
-        <ProductItem />        
+        <ProductItem />
       </div>
       <div className="products-body__list products-list">
         <ProductItem />
-        <ProductItem />     
+        <ProductItem />
       </div>
-    </div>);
-}
+    </div>
+  );
+};
