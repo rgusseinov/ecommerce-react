@@ -119,25 +119,52 @@ export const ProductPage: React.FC = () => {
 
                 <div className="product-info__section info-section">
                   <div className="info-section__title">
-                    Комплектация <img src={info} alt="Комплектация" />
+                    Комплектация
+                    <img src={info} />
                   </div>
 
-                  <div className="info-section__body">
+                  <div className="info-section__body e-type">
                     <div className="info-section__row">
-                      <div className="info-section product-box selected basic">
-                        Базовая
-                      </div>
-                      <div className="info-section product-box max">
-                        Версия MAX
-                      </div>
+                      <label className="e-type__label">
+                        <input
+                          type="radio"
+                          name="equipmentType"
+                          value="basic"
+                          className="e-type__checkbox h-checkbox"
+                        />
+                        <div className="info-section product-box basic">
+                          Базовая
+                        </div>
+                      </label>
+
+                      <label className="e-type__label">
+                        <input
+                          type="radio"
+                          name="equipmentType"
+                          value="max"
+                          className="e-type__checkbox h-checkbox"
+                        />
+                        <div className="info-section product-box max">
+                          Версия MAX
+                        </div>
+                      </label>
                     </div>
                     <div className="info-section__row">
-                      <div className="info-section product-box vip">
-                        VIP-версия
-                      </div>
+                      <label className="e-type__label">
+                        <input
+                          type="radio"
+                          name="equipmentType"
+                          value="vip"
+                          className="e-type__checkbox h-checkbox"
+                        />
+                        <div className="info-section product-box vip">
+                          VIP-версия
+                        </div>
+                      </label>
                     </div>
                     <div className="product-info__border-line"></div>
                   </div>
+
                   <div className="info-section__footer info-subsection">
                     <div className="info-subsection__label">Покрышки</div>
                     <div className="info-subsection__content subsection-content">
@@ -151,7 +178,7 @@ export const ProductPage: React.FC = () => {
                         <div className="subsection-content__sub">7600 руб.</div>
                       </div>
                       <div className="subsection-content__block settings">
-                        <a href="/" className="settings__link">
+                        <a href="#" className="settings__link">
                           Изменить
                         </a>
                       </div>
@@ -160,75 +187,127 @@ export const ProductPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="product-info__section info-section">
+                <div className="product-info__section info-section product-warranty">
                   <div className="info-section__title">Гарантия</div>
                   <div className="info-section__body">
                     <div className="info-section__row">
-                      <div className="info-section__box product-box selected">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            Стандартная 1 год
-                          </span>
-                          <div className="product-box__sublabel">Бесплатно</div>
-                        </div>
-                      </div>
-                      <div className="info-section__box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            Расширенная 2 года
-                          </span>
-                          <div className="product-box__sublabel">
-                            2 990 руб.
+                      <label className="product-warranty__label">
+                        <input
+                          type="radio"
+                          name="productWarranty"
+                          className="product-warranty__checkbox h-checkbox"
+                          value="standard"
+                        />
+                        <div className="info-section__box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              Стандартная 1 год
+                            </span>
+                            <div className="product-box__sublabel">
+                              Бесплатно
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </label>
+                      <label className="product-warranty__label">
+                        <input
+                          type="radio"
+                          name="productWarranty"
+                          className="product-warranty__checkbox h-checkbox"
+                          value="extended"
+                        />
+                        <div className="info-section__box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              Расширенная 2 года
+                            </span>
+                            <div className="product-box__sublabel">
+                              2 990 руб.
+                            </div>
+                          </div>
+                        </div>
+                      </label>
                     </div>
+                    <div className="product-info__border-line"></div>
                   </div>
                 </div>
 
-                <div className="product-info__section info-section">
+                <div className="product-info__section info-section additional-service">
                   <div className="info-section__title">
                     Дополнительные услуги
                   </div>
                   <div className="info-section__body">
                     <div className="info-section__row">
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">Нет</span>
-                        </div>
-                      </div>
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            Расширенная 2 года
-                          </span>
-                          <div className="product-box__sublabel">
-                            2 990 руб.
+                      <label className="additional-service__label">
+                        <input
+                          type="radio"
+                          name="additionalService"
+                          className="additional-service__checkbox h-checkbox"
+                          value="no"
+                        />
+                        <div className="info-section_box product-box empty-service-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">Нет</span>
                           </div>
                         </div>
-                      </div>
+                      </label>
+                      <label className="additional-service__label">
+                        <input
+                          type="radio"
+                          name="additionalService"
+                          className="additional-service__checkbox h-checkbox"
+                          value="extended"
+                        />
+                        <div className="info-section_box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              Расширенная 2 года
+                            </span>
+                            <div className="product-box__sublabel">
+                              2 990 руб.
+                            </div>
+                          </div>
+                        </div>
+                      </label>
                     </div>
+
                     <div className="info-section__row">
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            Гидроизоляция
-                          </span>
-                          <div className="product-box__sublabel">
-                            3 850 руб.
+                      <label className="additional-service__label">
+                        <input
+                          type="radio"
+                          name="additionalService"
+                          className="additional-service__checkbox h-checkbox"
+                          value="no"
+                        />
+                        <div className="info-section_box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              Гидроизоляция
+                            </span>
+                            <div className="product-box__sublabel">
+                              3 850 руб.
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            Гидроизоляция <br /> и настройка
-                          </span>
-                          <div className="product-box__sublabel">
-                            3 409 руб. (-30%)
+                      </label>
+                      <label className="additional-service__label">
+                        <input
+                          type="radio"
+                          name="additionalService"
+                          className="additional-service__checkbox h-checkbox"
+                          value="extended"
+                        />
+                        <div className="info-section_box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              Расширенная 2 года
+                            </span>
+                            <div className="product-box__sublabel">
+                              2 990 руб.
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </label>
                     </div>
                     <div className="product-info__border-line"></div>
                   </div>
@@ -250,12 +329,12 @@ export const ProductPage: React.FC = () => {
                       </div>
                       <div className="gift-box__row">
                         <div className="gift-box__block gift-block">
-                          <img src={book} alt="Gift" />
+                          <img src={book} />
                           Книга «6 вопросов об электротранспорте, на которые вы
                           должны знать ответ».
                         </div>
                         <div className="gift-box__block gift-block">
-                          <img src={phoneHolder} alt="Gift" />
+                          <img src={phoneHolder} />
                           Универсальный держатель для телефона
                         </div>
                       </div>
@@ -263,42 +342,75 @@ export const ProductPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="product-info__section info-section product-color-section">
+                <div className="product-info__section info-section product-color">
                   <div className="info-section__body">
                     <div className="info-section__row">
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            Без упаковки
-                          </span>
+                      <label className="product-color__label">
+                        <input
+                          type="radio"
+                          name="productColor"
+                          className="product-color__checkbox h-checkbox"
+                          value="without"
+                        />
+                        <div className="info-section_box product-box empty-color-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              Без упаковки
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            <img src={circlePink} alt="Circle Pink" />
-                          </span>
-                          <div className="product-box__sublabel">Розовый</div>
+                      </label>
+                      <label className="product-color__label">
+                        <input
+                          type="radio"
+                          name="productColor"
+                          className="product-color__checkbox h-checkbox"
+                          value="pink"
+                        />
+                        <div className="info-section_box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              <img src={circlePink} alt="Circle pink" />
+                            </span>
+                            <div className="product-box__sublabel">Розовый</div>
+                          </div>
                         </div>
-                      </div>
+                      </label>
                     </div>
+
                     <div className="info-section__row">
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            <img src={circleBlue} alt="Circle Blue" />
-                          </span>
-                          <div className="product-box__sublabel">Розовый</div>
+                      <label className="product-color__label">
+                        <input
+                          type="radio"
+                          name="productColor"
+                          className="product-color__checkbox h-checkbox"
+                          value="blue"
+                        />
+                        <div className="info-section_box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              <img src={circleBlue} alt="Circle blue" />
+                            </span>
+                            <div className="product-box__sublabel">Синий</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="info-section_box product-box">
-                        <div className="product-box__wrapper">
-                          <span className="product-box__label">
-                            <img src={circleRed} alt="Circle Red" />
-                          </span>
-                          <div className="product-box__sublabel">Красный</div>
+                      </label>
+                      <label className="product-color__label">
+                        <input
+                          type="radio"
+                          name="productColor"
+                          className="product-color__checkbox h-checkbox"
+                          value="blue"
+                        />
+                        <div className="info-section_box product-box">
+                          <div className="product-box__wrapper">
+                            <span className="product-box__label">
+                              <img src={circleRed} alt="Circle red" />
+                            </span>
+                            <div className="product-box__sublabel">Красный</div>
+                          </div>
                         </div>
-                      </div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -308,7 +420,7 @@ export const ProductPage: React.FC = () => {
                     <div className="shopping__header">
                       <div className="shopping__title">45 900 руб.</div>
                       <div className="shopping__right-block">
-                        <img src={like} alt="Нравится" />
+                        <img src={like} />
                       </div>
                     </div>
                     <div className="shopping__middle shopping-middle">

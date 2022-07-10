@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { ProductPage } from './components/ProductPage';
 import { ShoppingCart } from './components/ShoppingCart';
 import '../src/scss/App.scss';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

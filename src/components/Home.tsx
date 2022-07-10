@@ -3,6 +3,7 @@ import { BreadScrumb } from './BreadScrumb';
 import { Sort } from './Sort';
 import { CategoryFilter } from './CategoryFilter';
 import { ProductItemList } from './ProductItemList';
+import { Subscription } from './Subscription';
 
 export const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ export const Home: React.FC = () => {
             <ProductItemList />
           </section>
         </div>
+        <Subscription />
       </main>
     </>
   );

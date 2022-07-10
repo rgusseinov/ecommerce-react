@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductItem } from './ProductItem';
+import { ProductItemAdvertising } from './ProductItemAdvertising';
 
 export const ProductItemList: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ export const ProductItemList: React.FC = () => {
       <div className="products-body__list products-list">
         <ProductItem />
         <ProductItem />
-        <ProductItem />
+        <ProductItemAdvertising />
       </div>
       <div className="products-body__list products-list">
         <ProductItem />

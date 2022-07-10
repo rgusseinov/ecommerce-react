@@ -1,0 +1,208 @@
+.footer {
+  padding: 55px 0 0 0;
+  background-color: #F4F7FB;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__column:first-child {
+      display: flex;
+      justify-content: space-between;
+      width: 510px;
+    }
+    &__column:last-child {
+      width: 510px;
+    }
+    &__for-buyer {
+      display: flex;
+    }
+    .buyer-column-1 {
+      margin: 0 45px 0 0;
+    }
+    .nav-row-1 {
+      display: flex;
+      .footer-nav {
+        margin-right: 50px;
+      }
+    }
+    .nav-row-2 {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .w-header {
+    min-height: 25px;
+  }
+  .footer-nav {
+    &__row {
+      margin-bottom: 20px;
+    }
+    &__title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;      
+      color: #282739;
+      margin-bottom: 25px;
+    }
+    &__cta {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 17px;
+      color: #6F73EE;
+    }
+    &__list {
+      padding: 0;
+      list-style: none;
+      li {
+        margin: 0 0 10px 0;
+      }
+    }
+    &__link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #5D6C7B;
+    }
+    &__contact-phone_phone {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 23px;
+      color: #282739;
+    }
+    &__contact {
+      &.label {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #5D6C7B;
+      }
+      &.number {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 23px;        
+        color: #282739;
+      }
+      &.time {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #5D6C7B;
+      }
+    }
+  }
+  .footer-contact > div {
+    margin-bottom: 5px;
+  }
+
+  .footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__column {
+      display: flex;
+      align-items: center;
+    }
+    &__logo {
+      margin-right: 50px;
+    }
+    &__app-markets {
+      display: flex;
+      align-items: center;
+      img:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+  .f-social-block {
+    display: flex;
+    &__label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: #282739;
+    }
+    &__info {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: #5D6C7B;
+    }
+    &__item {
+      display: flex;
+      background-color: #fff;
+      padding: 7px 12px 7px 12px;
+      border-radius: 5px;
+      margin-right: 10px;
+      img {
+        margin-right: 10px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  
+  .footer-copyright {
+    display: flex;
+    justify-content: space-between;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-copyright-block {
+      width: 520px;
+    }
+    &__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li:first-child {
+        margin-right: 45px;
+      }
+    }
+    &__link {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 17px;
+      color: #5D6C7B;
+    }
+    .payment-block {
+      display: flex;
+      
+      &__container {
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid #EAEBED;
+        padding: 1px 5px;
+        margin-right: 5px;
+      }
+      img {
+        border-radius: 3px;  
+        width: 24px;
+        height: 10px;      
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .chat-block {
+      width: 157px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .bottom-h-line {
+    border-bottom: 1.4px solid #dcdcdc;
+    width: 1110px;
+    margin: 30px 0;
+  }
+}
