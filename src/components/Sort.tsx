@@ -47,7 +47,11 @@ export const Sort: React.FC = () => {
           </div>
         </div>
         <div
-          className="sortby-controls__params sortby-params sort-btn"
+          className={
+            showSortByParam
+              ? 'sortby-controls__params sortby-params sort-btn selected'
+              : 'sortby-controls__params sortby-params sort-btn'
+          }
           onClick={toggleSortByParam}
         >
           <div className="sortby-params__container">

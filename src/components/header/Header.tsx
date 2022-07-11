@@ -1,7 +1,7 @@
 import React from 'react';
-import { HeaderMenu } from './HeaderMenu';
-import { HeaderMiddle } from './HeaderMiddle';
 import { HeaderTop } from './HeaderTop';
+import { HeaderMiddle } from './HeaderMiddle';
+import { HeaderMenu } from './HeaderMenu';
 
 export const Header: React.FC = () => {
   return (

@@ -18,12 +18,6 @@ export const HeaderMiddle: React.FC = () => {
   const toggleCatalog = () => setCatalogShow(!catalogShow);
   const toggleShoppingCart = () => setShoppingCartShow(!shoppingCartShow);
 
-  /* document.querySelector(".h-shopping-cart").onclick = function (e) {
-    const popupMenu = document.querySelector(".s-cart-popup");
-    popupMenu.classList.toggle("show");
-  
-  };*/
-
   return (
     <>
       <div className="header__middle header-middle">
@@ -34,7 +28,6 @@ export const HeaderMiddle: React.FC = () => {
                 <img src={logo} alt="Kugoo" className="logo" />
               </div>
             </div>
-
             <div className="header-middle__column header-catalog">
               <a
                 href="#"
@@ -47,7 +40,6 @@ export const HeaderMiddle: React.FC = () => {
                 <div className="menu-catalog__label">Каталог</div>
               </a>
             </div>
-
             <div className="header-middle__column header-search">
               <div className="wrapper">
                 <form action="" className="form-search">
@@ -70,7 +62,6 @@ export const HeaderMiddle: React.FC = () => {
                 </form>
               </div>
             </div>
-
             <div className="header-middle__column header-shopping">
               <div className="header-shopping__block compare">
                 <img src={compareIcon} alt="compare" />

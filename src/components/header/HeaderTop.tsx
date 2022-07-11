@@ -53,7 +53,6 @@ export const HeaderTop: React.FC = () => {
                 <img src={plusCallIcon} />
               </div>
             </a>
-
             <div
               className={
                 showCallcenter
