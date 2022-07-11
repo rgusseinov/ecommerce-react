@@ -13,6 +13,8 @@
   &__page-content {
     display: flex;
   }
+  
+  
   /* Sort by Section */
   &__sortby-header {
     display: flex;
@@ -45,6 +47,97 @@
      margin-left: 15px; 
     }
   }
+  .sortby-price {
+    z-index: 99;
+    position: relative;
+    cursor: pointer;
+
+    &.selected {
+      background-color: #6F73EE;
+      color: #fff;
+    }
+  }
+  .sortby-price-popup {
+   position: absolute;
+   background-color: $bg-color;
+   top: 47px;
+   left: 0px;
+   padding: 10px 10px;
+   width: 144px;
+   height: 47px;
+   border-radius: 5px;
+   visibility: hidden;
+   opacity: 0;
+   z-index: 999;
+
+   &__item {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #282739;
+    margin-bottom: 7px;
+    &.selected {
+      color: #6F73EE;
+     }
+   }
+   &.show {
+    visibility: visible;
+    opacity: 1; 
+   }
+  }
+  .sortby-params-popup {
+    position: absolute;
+    background-color: $bg-color;
+    top: 47px;
+    left: 0px;
+    padding: 10px 10px;
+    width: 144px;
+    height: 47px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999;
+ 
+    &__item {
+     font-weight: 400;
+     font-size: 14px;
+     line-height: 20px;
+     color: #282739;
+     margin-bottom: 7px;
+     &.selected {
+       color: #6F73EE;
+     }
+    }
+    &.show {
+     visibility: visible;
+     opacity: 1; 
+    }
+  }
+  .sortby-params {
+    z-index: 99;
+    position: relative;
+    cursor: pointer;
+
+    &.selected {
+      background-color: #6F73EE;
+      color: #fff;
+    }
+  }
+
+  // Sidebar filter Section
+  .page-sidebar {
+    max-width: 255px;
+    flex: 0 0 100%;
+    background-color: $bg-color;
+    margin: 0 40px 220px 0;
+    height: 590px;
+    &__container {
+      max-width: 212px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+  }
+
 
   // Sidebar filter Section
   .category-filters {
