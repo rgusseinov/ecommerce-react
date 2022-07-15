@@ -1,6 +1,8 @@
 .header {
   border-bottom: 2px solid #ECF3FF;
   margin: 0 0 25px 0;
+  position: relative;
+  z-index: 999;
   &__top {
     border: 1px solid #ECF3FF;
     .wrapper {
@@ -29,7 +31,7 @@
     display: flex;
     flex: 0 0 150px;
     position: relative;
-    z-index: 9;
+    z-index: 999; // index
     &__call {
       display: flex;
       align-items: center;
@@ -168,21 +170,14 @@
         align-items: center;
         cursor: pointer;
       }
-/*       .cart {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        line-height: 26px;
-      } */
     }
   }
   
   /* Overlay category */
   .header-overlay {
     position: relative;
-    z-index: 1;
-    opacity: 0;
+    z-index: 1; // index
+    opacity: 999;
     visibility: hidden;
     &__wrapper {
       z-index: 2;
@@ -396,7 +391,7 @@
     max-width: 305px;
     margin-left: 100px;
     position: absolute;
-    z-index: 10;
+    z-index: 999; // index
     right: 10px;
     top: 34px;
     right: 22px;
