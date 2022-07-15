@@ -1,5 +1,5 @@
 import React from 'react';
-import { BreadScrumb } from './BreadScrumb';
+import { BreadScrumb } from '../components/BreadScrumb';
 import productImage from '../assets/img/product-page/main.svg';
 import productThumbnail from '../assets/img/product-page/small-image.svg';
 import activeIcon from '../assets/img/product-page/active-icon.svg';

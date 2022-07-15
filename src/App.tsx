@@ -1,10 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import { Home } from './components/Home';
-import { Header } from './components/Header';
-import { ProductPage } from './components/ProductPage';
-import { ShoppingCart } from './components/ShoppingCart';
-import '../src/scss/App.scss';
+import { Home } from './pages/Home';
+import { Header } from './components/header/Header';
+import { ProductPage } from './pages/ProductPage';
+import { ShoppingCart } from './pages/ShoppingCart';
 import { Footer } from './components/Footer';
+import { NotFound } from './pages/NotFound';
+import '../src/scss/App.scss';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
