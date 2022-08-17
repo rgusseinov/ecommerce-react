@@ -4,9 +4,6 @@ import arrowDownIcon from '../assets/img/main/product-item/arrow-down.svg';
 export const Sort: React.FC = () => {
   const [showSortByPrice, setShowSortByPrice] = useState<boolean>(false);
   const [showSortByParam, setShowSortByParam] = useState<boolean>(false);
-
-  const toggleSortByPrice = () => setShowSortByPrice(!showSortByPrice);
-  const toggleSortByParam = () => setShowSortByParam(!showSortByParam);
   /*
   // Sort by params
   document.querySelector(".sortby-params").onclick = function (e) {
@@ -22,23 +19,19 @@ export const Sort: React.FC = () => {
       <div className="sortby-header__block sortby-controls">
         <div className="sortby-controls__label">Сортировать:</div>
         <div
-          className={
-            showSortByPrice
-              ? 'sortby-controls__price sort-btn sortby-price selected'
-              : 'sortby-controls__price sort-btn sortby-price'
-          }
-          onClick={toggleSortByPrice}
+          className={`sortby-controls__price sort-btn sortby-price ${
+            showSortByPrice ? 'selected' : ''
+          }`}
+          onClick={() => setShowSortByPrice(!showSortByPrice)}
         >
           <div className="sortby-price__container">
             По цене
             <img src={arrowDownIcon} alt="По цене" />
           </div>
           <div
-            className={
-              showSortByPrice
-                ? 'sortby-price-popup price-popup show'
-                : 'sortby-price-popup price-popup'
-            }
+            className={`sortby-price-popup price-popup ${
+              showSortByPrice ? 'show' : ''
+            }`}
           >
             <div className="sortby-price-popup__item">Сначало дорогие</div>
             <div className="sortby-price-popup__item selected">
@@ -52,7 +45,7 @@ export const Sort: React.FC = () => {
               ? 'sortby-controls__params sortby-params sort-btn selected'
               : 'sortby-controls__params sortby-params sort-btn'
           }
-          onClick={toggleSortByParam}
+          onClick={() => setShowSortByParam(!showSortByParam)}
         >
           <div className="sortby-params__container">
             По дальности хода
