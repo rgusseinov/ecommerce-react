@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header } from '../components/header/Header';
-import { Footer } from '../components/Footer';
+import { Header } from '../components/Header/Header';
+import { Footer } from '../components/Footer/Footer';
 import notFound from '../assets/img/404/404.svg';
 
 export const NotFound: React.FC = () => {

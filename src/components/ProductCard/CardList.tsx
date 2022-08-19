@@ -1,18 +1,18 @@
 import React from 'react';
-import { ProductItem } from './ProductItem';
-import { ProductItemAdvertising } from './ProductItemAdvertising';
+import { ProductItemAdvertising } from '../ProductItemAdvertising';
+import { ProductCard } from './Card';
 
-export const ProductItemList: React.FC = () => {
+export const ProductCardList: React.FC = () => {
   return (
     <div className="product__products-body products-body">
       <div className="products-body__list products-list">
-        <ProductItem />
-        <ProductItem />
+        <ProductCard />
+        <ProductCard />
         <ProductItemAdvertising />
       </div>
       <div className="products-body__list products-list">
-        <ProductItem />
-        <ProductItem />
+        <ProductCard />
+        <ProductCard />
       </div>
     </div>
   );

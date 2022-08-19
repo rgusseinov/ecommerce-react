@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useState } from 'react';
 
-interface subscriptionForm {
+interface iSubscriptionForm {
   email: string;
 }
 
 export const Subscription: React.FC = () => {
-  const [subscriptionFormData, setSubscriptionFormData] =
-    useState<subscriptionForm>();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, setSubscriptionFormData] = useState<iSubscriptionForm>();
 
   const handleFormSubmit = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    evt.preventDefault();
     setSubscriptionFormData({ email: evt.target.value });
   };
   return (
@@ -25,7 +26,7 @@ export const Subscription: React.FC = () => {
               <input
                 type="text"
                 className="subscription-form__input"
-                value={`${subscriptionFormData?.email}`}
+                value={``}
                 placeholder="Введите Ваш email"
                 onChange={() => {}}
               />
