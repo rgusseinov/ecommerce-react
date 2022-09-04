@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable prettier/prettier */
+import React, { useEffect, useState } from 'react';
 import logo from '../../assets/img/header/logo.svg';
 import compareIcon from '../../assets/img/header/compare.svg';
 import favIcon from '../../assets/img/header/fav.svg';
@@ -11,11 +12,28 @@ import scooter2 from '../../assets/img/header/category-menu/scooter-2.svg';
 import vacuumCleaner from '../../assets/img/header/category-menu/vacuum-cleaner.svg';
 import weighingScale from '../../assets/img/header/category-menu/weighing-scale.svg';
 
-export const HeaderMiddle: React.FC = () => {
+type HeaderMiddleProps = {
+  dropdown: boolean,
+  triggerDropdownList: (flag: boolean) => void
+};
+
+
+export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, triggerDropdownList }) => {
   const [catalogShow, setCatalogShow] = useState<boolean>(false);
   const [shoppingCartShow, setShoppingCartShow] = useState<boolean>(false);
 
-  const toggleCatalog = () => setCatalogShow(!catalogShow);
+  const toggleCatalog = () => {
+    setCatalogShow(!catalogShow);
+  };
+
+  useEffect(() => {
+    if (dropdown) {
+      setCatalogShow(false);
+      setShoppingCartShow(false);
+      // triggerDropdownList(!dropdown);
+    }
+  }, [dropdown]);
+  console.log(`middle`, dropdown);
   const toggleShoppingCart = () => setShoppingCartShow(!shoppingCartShow);
 
   return (
@@ -31,8 +49,7 @@ export const HeaderMiddle: React.FC = () => {
             <div className="header-middle__column header-catalog">
               <a
                 href="#"
-                className={
-                  catalogShow ? 'menu-catalog__link show' : 'menu-catalog__link'
+                className={`menu-catalog__link ${catalogShow ? 'show' : ''}`
                 }
                 onClick={toggleCatalog}
               >
@@ -77,11 +94,8 @@ export const HeaderMiddle: React.FC = () => {
                 Корзина
               </a>
               <div
-                className={
-                  shoppingCartShow
-                    ? 'header__s-cart-popup s-cart-popup show'
-                    : 'header__s-cart-popup s-cart-popup'
-                }
+                className={`header__s-cart-popup s-cart-popup ${shoppingCartShow ? 'show' : ''
+                  }`}
               >
                 <div className="s-cart-popup__top">
                   <div className="s-cart-popup__container">

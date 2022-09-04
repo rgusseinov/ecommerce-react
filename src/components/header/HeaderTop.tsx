@@ -1,13 +1,33 @@
-import React, { useState } from 'react';
+/* eslint-disable prettier/prettier */
+import React, { useEffect, useRef, useState } from 'react';
 import viberIcon from '../../assets/img/header/viber.svg';
 import whatsappIcon from '../../assets/img/header/whatsapp.svg';
 import telegramIcon from '../../assets/img/header/telegram.svg';
 import plusCallIcon from '../../assets/img/header/plus-call.svg';
 
-export const HeaderTop: React.FC = () => {
-  const [showCallcenter, setShowCallcenter] = useState<boolean>(false);
-  const toggleCallcenterPopup = () => setShowCallcenter(!showCallcenter);
+type HeaderTopProps = {
+  dropdown: boolean,
+  triggerDropdownList: (flag: boolean) => void
+};
 
+export const HeaderTop: React.FC<HeaderTopProps> = ({ dropdown, triggerDropdownList }) => {
+  const [showCallcenter, setShowCallcenter] = useState<boolean>(false);
+  const callCenterRef = useRef<HTMLDivElement>(null);
+
+  const toggleCallcenterPopup = (evt: any) => {
+    setShowCallcenter(!showCallcenter);
+    triggerDropdownList(!showCallcenter);
+    // triggerDropdownList(!dropdown);
+  };
+
+  useEffect(() => {
+    if (dropdown) {
+      setShowCallcenter(true);
+    }
+  }, [dropdown]);
+
+  console.log(`top`, dropdown);
+  // console.log(`callCenterRef`, callCenterRef.current);
   return (
     <div className="header__top">
       <div className="container">
@@ -42,7 +62,7 @@ export const HeaderTop: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="header__column header-contact">
+          <div className="header__column header-contact" ref={callCenterRef}>
             <a
               href="#"
               className="header-contact__call"
@@ -54,11 +74,8 @@ export const HeaderTop: React.FC = () => {
               </div>
             </a>
             <div
-              className={
-                showCallcenter
-                  ? 'header-contact__callcenter-popup callcenter-popup show'
-                  : 'header-contact__callcenter-popup callcenter-popup'
-              }
+              className={`header-contact__callcenter-popup callcenter-popup ${showCallcenter ? 'show' : ''
+                }`}
             >
               <div className="callcenter-popup__item">
                 <div className="callcenter-popup__container">
