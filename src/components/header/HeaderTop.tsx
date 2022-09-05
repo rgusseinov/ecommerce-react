@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import viberIcon from '../../assets/img/header/viber.svg';
 import whatsappIcon from '../../assets/img/header/whatsapp.svg';
 import telegramIcon from '../../assets/img/header/telegram.svg';
@@ -7,27 +7,26 @@ import plusCallIcon from '../../assets/img/header/plus-call.svg';
 
 type HeaderTopProps = {
   dropdown: boolean,
-  triggerDropdownList: (flag: boolean) => void
+  popupType: string,
+  triggerDropdownList: (e: any) => void
 };
 
-export const HeaderTop: React.FC<HeaderTopProps> = ({ dropdown, triggerDropdownList }) => {
+export const HeaderTop: React.FC<HeaderTopProps> = ({ dropdown, popupType, triggerDropdownList }) => {
   const [showCallcenter, setShowCallcenter] = useState<boolean>(false);
   const callCenterRef = useRef<HTMLDivElement>(null);
 
   const toggleCallcenterPopup = (evt: any) => {
     setShowCallcenter(!showCallcenter);
-    triggerDropdownList(!showCallcenter);
-    // triggerDropdownList(!dropdown);
+    triggerDropdownList(evt);
   };
+    // setShowCallcenter(!showCallcenter);
+  // };
 
-  useEffect(() => {
-    if (dropdown) {
-      setShowCallcenter(true);
-    }
-  }, [dropdown]);
-
-  console.log(`top`, dropdown);
-  // console.log(`callCenterRef`, callCenterRef.current);
+  // Используем локальный state для отображения/закрытие окна
+  // Глобальный используем для понимания, что нужно закрыть все открытые окна
+  // console.log(`top`, dropdown);
+  // 
+  console.log(`popupType`, popupType);
   return (
     <div className="header__top">
       <div className="container">
@@ -74,7 +73,7 @@ export const HeaderTop: React.FC<HeaderTopProps> = ({ dropdown, triggerDropdownL
               </div>
             </a>
             <div
-              className={`header-contact__callcenter-popup callcenter-popup ${showCallcenter ? 'show' : ''
+              className={`header-contact__callcenter-popup callcenter-popup ${dropdown && popupType == 'call-center' ? 'show' : ''
                 }`}
             >
               <div className="callcenter-popup__item">

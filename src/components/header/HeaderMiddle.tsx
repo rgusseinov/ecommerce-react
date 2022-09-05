@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import logo from '../../assets/img/header/logo.svg';
 import compareIcon from '../../assets/img/header/compare.svg';
 import favIcon from '../../assets/img/header/fav.svg';
@@ -14,28 +14,28 @@ import weighingScale from '../../assets/img/header/category-menu/weighing-scale.
 
 type HeaderMiddleProps = {
   dropdown: boolean,
+  popupType: string,
   triggerDropdownList: (flag: boolean) => void
 };
 
-
-export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, triggerDropdownList }) => {
+export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, popupType, triggerDropdownList }) => {
   const [catalogShow, setCatalogShow] = useState<boolean>(false);
   const [shoppingCartShow, setShoppingCartShow] = useState<boolean>(false);
+  const catalogRef = useRef<HTMLDivElement>(null);
 
-  const toggleCatalog = () => {
-    setCatalogShow(!catalogShow);
+  const toggleCatalog = (evt: any) => {
+    setCatalogShow(!dropdown);
+    triggerDropdownList(!dropdown);
+    triggerDropdownList(evt);
   };
 
-  useEffect(() => {
-    if (dropdown) {
-      setCatalogShow(false);
-      setShoppingCartShow(false);
-      // triggerDropdownList(!dropdown);
-    }
-  }, [dropdown]);
-  console.log(`middle`, dropdown);
-  const toggleShoppingCart = () => setShoppingCartShow(!shoppingCartShow);
+  const toggleShoppingCart = (evt: any) => {
+    setShoppingCartShow(!shoppingCartShow);
+  };
+  console.log(`popupType`, popupType);
 
+  // console.log(`middle`, dropdown);
+  // console.log(`catalogRef`, catalogRef.current);
   return (
     <>
       <div className="header__middle header-middle">
@@ -46,10 +46,10 @@ export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, triggerDro
                 <img src={logo} alt="Kugoo" className="logo" />
               </div>
             </div>
-            <div className="header-middle__column header-catalog">
+            <div className="header-middle__column header-catalog" ref={catalogRef}>
               <a
                 href="#"
-                className={`menu-catalog__link ${catalogShow ? 'show' : ''}`
+                className={`menu-catalog__link ${dropdown && popupType == 'menu-catalog' ? 'show' : ''}`
                 }
                 onClick={toggleCatalog}
               >
