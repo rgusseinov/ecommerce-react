@@ -6,7 +6,12 @@ import notFound from '../assets/img/404/404.svg';
 export const NotFound: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header
+        popupState={undefined}
+        triggerDropdownList={function (e: any): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
       <section className="page__notfound page-notfound">
         <div className="container1">
           <div className="page-notfound__wrapper">

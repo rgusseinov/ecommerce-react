@@ -1,32 +1,26 @@
 /* eslint-disable prettier/prettier */
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import viberIcon from '../../assets/img/header/viber.svg';
 import whatsappIcon from '../../assets/img/header/whatsapp.svg';
 import telegramIcon from '../../assets/img/header/telegram.svg';
 import plusCallIcon from '../../assets/img/header/plus-call.svg';
+import classNames from 'classnames';
 
 type HeaderTopProps = {
-  dropdown: boolean,
-  popupType: string,
+  popupState: any,
   triggerDropdownList: (e: any) => void
 };
 
-export const HeaderTop: React.FC<HeaderTopProps> = ({ dropdown, popupType, triggerDropdownList }) => {
-  const [showCallcenter, setShowCallcenter] = useState<boolean>(false);
-  const callCenterRef = useRef<HTMLDivElement>(null);
-
+export const HeaderTop: React.FC<HeaderTopProps> = ({ popupState, triggerDropdownList }) => {
   const toggleCallcenterPopup = (evt: any) => {
-    setShowCallcenter(!showCallcenter);
     triggerDropdownList(evt);
   };
-    // setShowCallcenter(!showCallcenter);
-  // };
 
-  // Используем локальный state для отображения/закрытие окна
-  // Глобальный используем для понимания, что нужно закрыть все открытые окна
-  // console.log(`top`, dropdown);
-  // 
-  console.log(`popupType`, popupType);
+  const classCallCenter = classNames({
+    'header-contact__callcenter-popup callcenter-popup': true,
+    show: popupState.isCallcenterShowing ? 'show' : ''
+  });
+  // console.log(`popupState`, popupState);
   return (
     <div className="header__top">
       <div className="container">
@@ -61,20 +55,15 @@ export const HeaderTop: React.FC<HeaderTopProps> = ({ dropdown, popupType, trigg
               </div>
             </div>
           </div>
-          <div className="header__column header-contact" ref={callCenterRef}>
-            <a
-              href="#"
-              className="header-contact__call"
-              onClick={toggleCallcenterPopup}
-            >
-              <div className="header-contact__phone">+7 (800) 505-54-61</div>
+          <div className="header__column header-contact">
+            <a href="#" className="header-contact__call" onClick={toggleCallcenterPopup}>
+              <div className="header-contact__phone" data-type="call-center">+7 (800) 505-54-61</div>
               <div className="header-contact__phone-icon">
-                <img src={plusCallIcon} />
+                <img src={plusCallIcon} data-type="call-center" />
               </div>
             </a>
             <div
-              className={`header-contact__callcenter-popup callcenter-popup ${dropdown && popupType == 'call-center' ? 'show' : ''
-                }`}
+              className={classCallCenter}
             >
               <div className="callcenter-popup__item">
                 <div className="callcenter-popup__container">
@@ -116,6 +105,6 @@ export const HeaderTop: React.FC<HeaderTopProps> = ({ dropdown, popupType, trigg
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };

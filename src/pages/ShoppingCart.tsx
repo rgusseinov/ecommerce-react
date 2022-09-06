@@ -6,7 +6,12 @@ import cartEmpty from '../assets/img/shopping-cart/empty-cart.svg';
 export const ShoppingCart: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header
+        popupState={undefined}
+        triggerDropdownList={function (e: any): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
       <main className="shopping-cart">
         <div className="container">
           <div className="shopping-cart__breadcrumb">

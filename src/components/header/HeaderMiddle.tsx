@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import logo from '../../assets/img/header/logo.svg';
 import compareIcon from '../../assets/img/header/compare.svg';
 import favIcon from '../../assets/img/header/fav.svg';
@@ -11,31 +11,33 @@ import mountainBike from '../../assets/img/header/category-menu/mountain-bike.sv
 import scooter2 from '../../assets/img/header/category-menu/scooter-2.svg';
 import vacuumCleaner from '../../assets/img/header/category-menu/vacuum-cleaner.svg';
 import weighingScale from '../../assets/img/header/category-menu/weighing-scale.svg';
+import classNames from 'classnames';
 
 type HeaderMiddleProps = {
-  dropdown: boolean,
-  popupType: string,
-  triggerDropdownList: (flag: boolean) => void
+  popupState: any,
+  triggerDropdownList: (e: any) => void
 };
 
-export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, popupType, triggerDropdownList }) => {
-  const [catalogShow, setCatalogShow] = useState<boolean>(false);
-  const [shoppingCartShow, setShoppingCartShow] = useState<boolean>(false);
-  const catalogRef = useRef<HTMLDivElement>(null);
-
+export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ popupState, triggerDropdownList }) => {
   const toggleCatalog = (evt: any) => {
-    setCatalogShow(!dropdown);
-    triggerDropdownList(!dropdown);
     triggerDropdownList(evt);
   };
 
   const toggleShoppingCart = (evt: any) => {
-    setShoppingCartShow(!shoppingCartShow);
+    triggerDropdownList(evt);
   };
-  console.log(`popupType`, popupType);
 
-  // console.log(`middle`, dropdown);
-  // console.log(`catalogRef`, catalogRef.current);
+  const classMenuCatalog = classNames({
+    'menu-catalog__link': true,
+    show: popupState.isMenuShowing ? 'show' : ''
+  });
+
+  const classShoppingCart = classNames({
+    'header__s-cart-popup s-cart-popup': true,
+    show: popupState.isShoppingCartShowing ? 'show' : ''
+  });
+
+  // console.log(`popupState`, popupState);
   return (
     <>
       <div className="header__middle header-middle">
@@ -46,15 +48,14 @@ export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, popupType,
                 <img src={logo} alt="Kugoo" className="logo" />
               </div>
             </div>
-            <div className="header-middle__column header-catalog" ref={catalogRef}>
+            <div className="header-middle__column header-catalog" onClick={toggleCatalog} data-type="catalog">
               <a
                 href="#"
-                className={`menu-catalog__link ${dropdown && popupType == 'menu-catalog' ? 'show' : ''}`
-                }
-                onClick={toggleCatalog}
+                className={classMenuCatalog}
+                data-type="catalog"
               >
-                <div className="menu-catalog__icon"></div>
-                <div className="menu-catalog__label">Каталог</div>
+                <div className="menu-catalog__icon" data-type="catalog"></div>
+                <div className="menu-catalog__label" data-type="catalog">Каталог</div>
               </a>
             </div>
             <div className="header-middle__column header-search">
@@ -88,14 +89,14 @@ export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, popupType,
               </div>
               <a
                 className="header-shopping__block h-shopping-cart"
+                data-type="shopping-cart"
                 onClick={toggleShoppingCart}
               >
-                <img src={shoppingCart} alt="shopping-cart" />
+                <img src={shoppingCart} alt="shopping-cart" data-type="shopping-cart" />
                 Корзина
               </a>
               <div
-                className={`header__s-cart-popup s-cart-popup ${shoppingCartShow ? 'show' : ''
-                  }`}
+                className={classShoppingCart}
               >
                 <div className="s-cart-popup__top">
                   <div className="s-cart-popup__container">
@@ -181,11 +182,7 @@ export const HeaderMiddle: React.FC<HeaderMiddleProps> = ({ dropdown, popupType,
         </div>
       </div>
       <div
-        className={
-          catalogShow
-            ? 'header__middle header-overlay show'
-            : 'header__middle header-overlay'
-        }
+        className={`header__middle header-overlay ${popupState.isMenuShowing ? 'show' : ''}`}
       >
         <div className="container">
           <div className="header-overlay__wrapper overlay-wrapper">

@@ -8,7 +8,12 @@ import { ProductPageDetails } from '../components/ProductPageDetails/ProductPage
 export const ProductPage: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header
+        popupState={undefined}
+        triggerDropdownList={function (e: any): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
       <main className="product-page">
         <div className="container">
           <div className="product-page__wrapper">
