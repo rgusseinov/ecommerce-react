@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import compare from '../../assets/img/main/product-item/compare.svg';
 import arrowLeft from '../../assets/img/main/product-item/thumbnail-arrow-left.svg';
 import arrowRight from '../../assets/img/main/product-item/thumbnail-arrow-right.svg';
-import scooterImg1 from '../../assets/img/main/product-item/scooter-img-1.png';
-import scooterImg2 from '../../assets/img/main/product-item/scooter-img-2.png';
-import scooterImg3 from '../../assets/img/main/product-item/scooter-img-3.png';
+import { Gallery } from './Gallery';
 
 export const CardThumbnail: React.FC = () => {
   return (
@@ -16,31 +15,18 @@ export const CardThumbnail: React.FC = () => {
           </div>
         </div>
 
-        <div className="product-thumbnail__image">
-          <div className="image-switch">
-            <div className="image-switch__item img1">
-              <div className="image-switch__image">
-                <img src={scooterImg1} alt="kugoo" />
-              </div>
-            </div>
-            <div className="image-switch__item img2">
-              <div className="image-switch__image">
-                <img src={scooterImg2} alt="kugoo" />
-              </div>
-            </div>
-            <div className="image-switch__item img3">
-              <div className="image-switch__image">
-                <img src={scooterImg3} alt="kugoo" />
-              </div>
-            </div>
+        <div className="product-thumbnail__image_test">
+          <div className="image-switch_test">
+            <br />
+            <Gallery />
           </div>
           <ul className="product-thumbnail__navs thumbnail-navs">
-            <li className="thumbnail-navs__item arrow-left">
-              <img src={arrowLeft} alt="kugoo" />
+            {/*<li className="thumbnail-navs__item arrow-left" data-type="left">
+              <img src={arrowLeft} alt="kugoo" data-type="left" />
             </li>
-            <li className="thumbnail-navs__item arrow-right">
-              <img src={arrowRight} alt="kugoo" />
-            </li>
+            <li className="thumbnail-navs__item arrow-right" data-type="right">
+              <img src={arrowRight} alt="kugoo" data-type="right" />
+            </li>*/}
           </ul>
         </div>
       </div>
