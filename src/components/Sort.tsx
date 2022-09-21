@@ -18,7 +18,7 @@ export const Sort: React.FC<popupProps> = ({ popupState, triggerDropdownList }) 
     show: popupState.isSortByPriceShowing
   });
 
-  console.log(`price`, popupState.isSortByPriceShowing);
+  // console.log(`price`, popupState.isSortByPriceShowing);
   return (
     <div className="product__sortby-header sortby-header">
       <div className="sortby-header__block label">Фильтр</div>
